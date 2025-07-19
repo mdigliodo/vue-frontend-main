@@ -1,0 +1,66 @@
+A list of task for doing in this challenge:
+[X] Structure the code
+    src/
+    ├── assets/          # Archivos estáticos
+    ├── components/      # Componentes reutilizables
+    ├── views/           # Páginas principales
+    ├── services/        # Lógica de API o persistencia
+    ├── store/           # Estado global (si es necesario)
+    ├── utils/           # Funciones auxiliares
+    └── App.vue          # Componente principal
+[X] Create the changelog
+[X] Install and configure eslint
+[X] Install and configure Prettier
+[X] Install and configure tailwind
+[X] Customize tailwind theme with Ambar colors
+[X] Create some reusable components like buttons and cards
+[ ] Implement a generic modal component
+[ ] Configure deploy action in gitlab and aws cloudfrom
+[ ] Install Vuex for global store (just for the challenge, low)
+[ ] Make unit test with Vitest (medium)
+[ ] Make the integration of cypress (medium)
+[ ] Add a11y (High)
+[ ] Security like xss
+
+[ ] Complete readme.md
+
+
+- Configure theme of tailwind with Ambar colors
+- Create dynamic layouts
+- Reto 1, Reto 2, Reto 3
+- Create reutilizable buttons, event, toast, modals
+- Configure playwrigth and unit test
+- Resolve lint problems
+- Resolve deprecated dependencies
+- Configure prettier 
+- Can I add service and axios to submit the form to an api
+
+
+// My plans:
+
+[X] generic layouts: I make generic layout becouse we can scale the solution and do not repeat in every components the call to layout, we can specify inside the route
+[X] generic buttons
+[X] Add icons to vue
+[X] adding changelog
+[X] generic inputs
+[X] Generic form
+[x] Design a dynamic form creator usen computed value
+[X] Complete challenge 1
+[X] Reactive forms with vue 
+[X] Change font for one aestetic
+[X] multilenguaje for es/en
+[X] Create menu only header and responsive
+[X] to start the challenge, use another routes with other templates ex. when you create a user do not show any header or footer
+[X] Enhance: Make responsive design to challenge 1 like a register page
+[X] Make home 
+
+[ ] Complete challenge 2
+[ ] Enhance: Make responsive design to challenge 2 like an user profile
+[ ] Use vue sanitaze for v-html xxs atack
+[ ] for each screen or challenge explain in a short words en que me base to do the exercice
+
+Deseable:
+[ ] When user click "live demo" start navigate for all challenges like a normal flow, then they can see in details
+[ ] When you finish registration redirect to challenge 2 showing a modal
+[ ] when we finish to create the user, show modal success and redirect inside the details, we can show the details like profile or we can invite the user step by step to fill it
+[ ] For mobile inside privateLayout can transport the sidebar to bottom
