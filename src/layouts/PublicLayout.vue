@@ -1,5 +1,5 @@
 <script setup>
-import AppNavbar from '@/components/App/Navbar.vue'
+import AppNavbar from '@/components/App/AppNavbar.vue'
 
 defineOptions({
   name: 'PublicLayout',

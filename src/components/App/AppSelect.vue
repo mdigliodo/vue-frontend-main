@@ -1,78 +1,3 @@
-<template>
-  <button
-    ref="trigger"
-    type="button"
-    :disabled="disabled"
-    :class="[wrapperClasses, triggerClasses]"
-    :aria-controls="dropdownId"
-    aria-haspopup="listbox"
-    @click="toggle"
-    @keydown.down.prevent="onArrow"
-    @keydown.up.prevent="onArrow"
-    @keydown.esc="close"
-  >
-    <!-- Prefix -->
-    <span
-      v-if="$slots.prefix"
-      class="mr-2 inline-flex shrink-0 items-center"
-      aria-hidden="true"
-    >
-      <slot name="prefix" />
-    </span>
-
-    <!-- Hidden select for semantics + v-model sync -->
-    <select
-      ref="nativeSelect"
-      v-model="localModel"
-      :multiple="multiple"
-      :disabled="disabled"
-      :class="selectClasses"
-      class="sr-only"
-    >
-      <option
-        v-for="opt in options"
-        :key="opt.value"
-        :value="opt.value"
-      >
-        {{ opt.label }}
-      </option>
-    </select>
-
-    <!-- Visible button / dropdown -->
-
-    <span>{{ displayText }}</span>
-
-    <Icon
-      v-if="showChevron"
-      icon="mdi:chevron-down"
-      class="ml-auto h-5 w-5 transition-transform"
-      :class="isOpen ? 'rotate-180' : ''"
-    />
-
-    <!-- Dropdown list -->
-    <ul
-      v-if="isOpen"
-      :id="dropdownId"
-      ref="listbox"
-      role="listbox"
-      :aria-multiselectable="multiple"
-      :class="listClasses"
-      :aria-expanded="isOpen"
-    >
-      <li
-        v-for="(opt, idx) in options"
-        :key="opt.value"
-        role="option"
-        :aria-selected="isSelected(opt.value)"
-        :class="optionClasses(opt.value, idx)"
-        @click="selectOption(opt.value)"
-      >
-        {{ opt.label }}
-      </li>
-    </ul>
-  </button>
-</template>
-
 <script setup>
 import { Icon } from '@iconify/vue'
 import {
@@ -233,6 +158,81 @@ const optionClasses = (value, idx) => [
   idx === activeIndex.value ? 'ring-primary-900' : '',
 ]
 </script>
+
+<template>
+  <button
+    ref="trigger"
+    type="button"
+    :disabled="disabled"
+    :class="[wrapperClasses, triggerClasses]"
+    :aria-controls="dropdownId"
+    aria-haspopup="listbox"
+    @click="toggle"
+    @keydown.down.prevent="onArrow"
+    @keydown.up.prevent="onArrow"
+    @keydown.esc="close"
+  >
+    <!-- Prefix -->
+    <span
+      v-if="$slots.prefix"
+      class="mr-2 inline-flex shrink-0 items-center"
+      aria-hidden="true"
+    >
+      <slot name="prefix" />
+    </span>
+
+    <!-- Hidden select for semantics + v-model sync -->
+    <select
+      ref="nativeSelect"
+      v-model="localModel"
+      :multiple="multiple"
+      :disabled="disabled"
+      :class="selectClasses"
+      class="sr-only"
+    >
+      <option
+        v-for="opt in options"
+        :key="opt.value"
+        :value="opt.value"
+      >
+        {{ opt.label }}
+      </option>
+    </select>
+
+    <!-- Visible button / dropdown -->
+
+    <span>{{ displayText }}</span>
+
+    <Icon
+      v-if="showChevron"
+      icon="mdi:chevron-down"
+      class="ml-auto h-5 w-5 transition-transform"
+      :class="isOpen ? 'rotate-180' : ''"
+    />
+
+    <!-- Dropdown list -->
+    <ul
+      v-if="isOpen"
+      :id="dropdownId"
+      ref="listbox"
+      role="listbox"
+      :aria-multiselectable="multiple"
+      :class="listClasses"
+      :aria-expanded="isOpen"
+    >
+      <li
+        v-for="(opt, idx) in options"
+        :key="opt.value"
+        role="option"
+        :aria-selected="isSelected(opt.value)"
+        :class="optionClasses(opt.value, idx)"
+        @click="selectOption(opt.value)"
+      >
+        {{ opt.label }}
+      </li>
+    </ul>
+  </button>
+</template>
 
 <style scoped>
 /* Optional: hide native select arrow in Firefox */

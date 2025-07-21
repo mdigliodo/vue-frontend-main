@@ -5,14 +5,6 @@ const props = defineProps({
   data: { type: Object, default: () => ({}) },
 })
 
-  // bank: {
-  //   cardExpire: '06/22',
-  //   cardNumber: '50380955204220685',
-  //   cardType: 'maestro',
-  //   currency: 'Peso',
-  //   iban: 'NO17 0695 2754 967',
-  // },
-
 </script>
 
 <template>

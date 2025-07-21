@@ -1,5 +1,11 @@
+<script>
+export default {
+    name: 'AppCard',
+}
+</script>
+
 <template>
-  <div class="bg-white rounded-lg shadow min-w-full flex flex-col justify-between">
+  <div class="bg-white rounded-lg shadow flex flex-col justify-between">
     <div
       v-if="$slots.image"
       class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-wsmoke bg-clip-border rounded-xl h-96"
@@ -34,11 +40,5 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-    name: 'AppCard',
-}
-</script>
 
 <style scoped></style>

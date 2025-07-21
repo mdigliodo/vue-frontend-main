@@ -1,40 +1,3 @@
-<!-- AppButton.vue -->
-<template>
-  <component
-    :is="'button'"
-    :type="type"
-    :class="[buttonClasses, iconPosition === 'next' ? 'flex-row-reverse' : '']"
-    :disabled="isDisabled"
-    :aria-busy="loading"
-    :aria-disabled="isDisabled"
-  >
-    <!-- Icon or spinner -->
-    <span
-      v-if="hasLeadingVisual"
-      class="mr-2 inline-flex shrink-0 items-center"
-      aria-hidden="true"
-    >
-      <Icon
-        :is="leadingIconComponent"
-        v-if="!loading && leadingIconComponent"
-        :icon="icon"
-        :class="iconSize"
-      />
-
-      <Icon
-        v-else-if="loading"
-        :class="['animate-spin', iconSize]"
-        icon="mdi-light:loading"
-      />
-    </span>
-
-    <!-- Label mr-2 to compense the icon space -->
-    <span :class="{ 'mr-2': icon }">
-      <slot>{{ text }}</slot>
-    </span>
-  </component>
-</template>
-
 <script setup>
 import { Icon } from '@iconify/vue'
 import { computed, useSlots } from 'vue'
@@ -65,7 +28,7 @@ const props = defineProps({
   /* --- Content --- */
   text: { type: String, default: '' },
   icon: { type: [String, Object], default: undefined },
-  iconPosition: { type: String, default: 'pre', validator: (v) => ['pre', 'next'].includes(v) },
+  iconPosition: { type: String, default: 'preffix', validator: (v) => ['preffix', 'suffix'].includes(v) },
 
 })
 
@@ -122,3 +85,39 @@ const buttonClasses = computed(() => [
 ])
 
 </script>
+
+<template>
+  <component
+    :is="'button'"
+    :type="type"
+    :class="[buttonClasses, iconPosition === 'suffix' ? 'flex-row-reverse' : '']"
+    :disabled="isDisabled"
+    :aria-busy="loading"
+    :aria-disabled="isDisabled"
+  >
+    <!-- Icon or spinner -->
+    <span
+      v-if="hasLeadingVisual"
+      class="mr-2 inline-flex shrink-0 items-center"
+      aria-hidden="true"
+    >
+      <Icon
+        :is="leadingIconComponent"
+        v-if="!loading && leadingIconComponent"
+        :icon="icon"
+        :class="iconSize"
+      />
+
+      <Icon
+        v-else-if="loading"
+        :class="['animate-spin', iconSize]"
+        icon="mdi-light:loading"
+      />
+    </span>
+
+    <!-- Label mr-2 to compense the icon space -->
+    <span :class="{ 'mr-2': icon }">
+      <slot>{{ text }}</slot>
+    </span>
+  </component>
+</template>

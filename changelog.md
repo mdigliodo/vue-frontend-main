@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Styling app card component
 - Add translations
 - Create button back component
-- Start challenge 3
+- Start and finish challenge 3
+- Add unit test
 
 ## [1.0.3] - 20/07/2025
 - Styling user detail

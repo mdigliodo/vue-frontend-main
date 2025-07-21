@@ -46,7 +46,7 @@ const props = defineProps({
   <div class="grid grid-cols-4 gap-x-4 h-fit">
     <AppInput
       id="address-input"
-      :value="props.data.address.address"
+      :value="props.data.address?.address"
       aria-label="address"
       :label="$t('profile.company.address')"
       type="text"
@@ -56,7 +56,7 @@ const props = defineProps({
     />
     <AppInput
       id="city-input"
-      :value="props.data.address.city"
+      :value="props.data.address?.city"
       aria-label="city"
       :label="$t('profile.company.city')"
       type="text"
@@ -66,7 +66,7 @@ const props = defineProps({
     />
     <AppInput
       id="postalCode-input"
-      :value="props.data.address.postalCode"
+      :value="props.data.address?.postalCode"
       aria-label="postalCode"
       :label="$t('profile.company.postalCode')"
       type="text"
@@ -76,7 +76,7 @@ const props = defineProps({
     />
     <AppInput
       id="state-input"
-      :value="props.data.address.state"
+      :value="props.data.address?.state"
       aria-label="state"
       :label="$t('profile.company.state')"
       type="text"

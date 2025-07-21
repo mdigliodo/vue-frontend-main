@@ -1,36 +1,6 @@
-<template>
-  <div class="group mb-5">
-    <label
-      v-if="label"
-      :for="id"
-      class="text-primary-700 font-medium group-focus-within:text-secondary-700"
-    >{{ label
-    }}</label>
-    <input
-      :id="id"
-      :value="modelValue"
-      class="group w-full bg-primary-50 py-2 border-b-2 border-primary-200 text-primary-900 focus:outline-none focus:border-secondary-700 transition-colors read-only:cursor-pointer"
-      v-bind="$attrs"
-      @input="$emit('update:modelValue', $event.target.value)"
-    >
-    <ul
-      v-if="errors && errors.length"
-      class="mt-2"
-    >
-      <li
-        v-for="(error, index) in errors"
-        :key="index"
-        class="text-red-500 text-sm"
-      >
-        - {{ error
-        }}
-      </li>
-    </ul>
-  </div>
-</template>
-
 <script setup>
-import { defineProps, defineEmits } from 'vue'
+import { Icon } from '@iconify/vue'
+import { defineProps, defineEmits, useAttrs, ref } from 'vue'
 
 defineProps({
   id: {
@@ -52,6 +22,57 @@ defineProps({
   },
 })
 
+const attrs = useAttrs()
+
+// fallback if no "type" attribute is provided
+const typeInput = ref(attrs.type || 'text')
+
+console.log('type attrs', typeInput.value)
+
+const togglePasswordVisibility = () => {
+  typeInput.value = typeInput.value === 'password' ? 'text' : 'password'
+}
+
 defineEmits(['update:modelValue'])
 
 </script>
+
+<template>
+  <div class="relative group mb-5">
+    <label
+      v-if="label"
+      :for="id"
+      class="text-primary-700 font-medium group-focus-within:text-secondary-700"
+    >{{ label
+    }}</label>
+    <div class="relative">
+      <input
+        :id="id"
+        :value="modelValue"
+        class="group w-full bg-primary-50 py-2 border-b-2 border-primary-200 text-primary-900 focus:outline-none focus:border-secondary-700 transition-colors read-only:cursor-pointer"
+        v-bind="$attrs"
+        :type="typeInput"
+        @input="$emit('update:modelValue', $event.target.value)"
+      >
+      <Icon
+        v-if="$attrs.type === 'password'"
+        :icon="typeInput === 'password' ? 'mdi:eye' : 'mdi:eye-off'"
+        class="absolute right-3 bottom-2 -translate-y-1/2 text-primary-400 cursor-pointer"
+        @click="togglePasswordVisibility"
+      />
+    </div>
+    <ul
+      v-if="errors && errors.length"
+      class="mt-2"
+    >
+      <li
+        v-for="(error, index) in errors"
+        :key="'error-' + index"
+        class="text-red-500 text-sm"
+      >
+        - {{ error
+        }}
+      </li>
+    </ul>
+  </div>
+</template>

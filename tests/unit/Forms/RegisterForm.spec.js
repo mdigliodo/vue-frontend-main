@@ -45,6 +45,20 @@ describe('RegisterForm.vue', () => {
     expect(email.element.value).toBe('alice@mail.com')
   })
 
+  test('typing in password updates formData.password', async () => {
+    const wrapper = factory()
+    const password = wrapper.find('input[id="password-input"]')
+    await password.setValue('Pass123!')
+    expect(password.element.value).toBe('Pass123!')
+  })
+
+  test('typing in confirmPassword updates formData.confirmPassword', async () => {
+    const wrapper = factory()
+    const confirmPassword = wrapper.find('input[id="confirm-password-input"]')
+    await confirmPassword.setValue('Pass123!')
+    expect(confirmPassword.element.value).toBe('Pass123!')
+  })
+
   test('submit logs valid payload when everything is correct', async () => {
     const wrapper = factory()
 

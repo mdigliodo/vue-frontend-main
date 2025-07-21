@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
 import { createI18n } from 'vue-i18n'
 import '@/assets/main.css'
 
@@ -22,4 +23,4 @@ export const i18n = createI18n({
 
 const app = createApp(App)
 
-app.use(i18n).use(router).mount('#app')
+app.use(i18n).use(router).use(VueDOMPurifyHTML).mount('#app')

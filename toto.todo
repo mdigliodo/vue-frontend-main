@@ -37,11 +37,15 @@ A list of task for doing in this challenge:
 [X] Make unit test with Vitest
 [X] Resolve lint problems and warns
 [X] Add a11y
-
-[ ] Complete challenge 3
-[ ] For password and bank account add icon eye
-[ ] Configure playwrigth
-[ ] Sanitize v-html directives to add security and remove warns (vue Sanitize)
-[ ] For each screen or challenge explain in a short words en que me base to do the exercice deseable (can make a docs folder in the project and create md files)
-[ ] Configure deploy action in gitlab and aws cloudfrom - deseable
+[X] Complete challenge 3
+[X] Create new reusable components for calendar
+[X] Sanitize v-html directives to add security and remove warns (vue Sanitize)
+[X] For password and bank account add icon eye
 [ ] Enhance card type, show image of mastercard - optional
+[ ] upload challenge to github
+[ ] Try to deploy to a free host
+[ ] Configure deploy action in github and aws cloudfrom - deseable
+
+[ ] Configure playwright
+[ ] Create the first test with playwright
+[ ] For each screen or challenge explain briefly words what was my approach do the exercice

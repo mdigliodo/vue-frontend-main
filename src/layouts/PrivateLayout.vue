@@ -1,6 +1,6 @@
 <script setup>
-import AppNavbar from '@/components/App/Navbar.vue'
-import AppSidebar from '@/components/App/Sidebar.vue'
+import AppNavbar from '@/components/App/AppNavbar.vue'
+import AppSidebar from '@/components/App/AppSidebar.vue'
 
 defineOptions({
   name: 'PrivateLayout',

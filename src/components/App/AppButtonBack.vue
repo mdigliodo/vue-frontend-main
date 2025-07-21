@@ -1,3 +1,7 @@
+<script setup>
+import AppButton from '@/components/App/AppButton.vue'
+</script>
+
 <template>
   <AppButton
     icon="mdi:arrow-left"
@@ -7,7 +11,3 @@
     <slot />
   </AppButton>
 </template>
-
-<script setup>
-import AppButton from '@/components/App/AppButton.vue'
-</script>

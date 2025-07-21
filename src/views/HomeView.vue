@@ -26,8 +26,9 @@
         <!-- Add more content or buttons here if needed -->
         <div class="flex gap-2">
           <AppButton
+            id="home-intro-button"
             icon="mdi:arrow-right"
-            icon-position="next"
+            icon-position="suffix"
             variant="secondary"
             @click="$router.push({ name: 'introduction' })"
           >

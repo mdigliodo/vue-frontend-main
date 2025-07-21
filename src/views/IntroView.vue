@@ -45,24 +45,24 @@ const challenges = computed(() => [
       {{ $t('intro.title') }}
     </h1>
     <p
+      v-dompurify-html="$t('intro.description.p1')"
       class="mb-6"
-      v-html="$t('intro.description.p1')"
     />
     <p
+      v-dompurify-html="$t('intro.description.p2')"
       class="mb-6"
-      v-html="$t('intro.description.p2')"
     />
     <p
+      v-dompurify-html="$t('intro.description.p3')"
       class="mb-6"
-      v-html="$t('intro.description.p3')"
     />
     <p
+      v-dompurify-html="$t('intro.description.p4')"
       class="mb-6"
-      v-html="$t('intro.description.p4')"
     />
     <p
+      v-dompurify-html="$t('intro.description.p5')"
       class="mb-6"
-      v-html="$t('intro.description.p5')"
     />
   </div>
 
@@ -70,6 +70,7 @@ const challenges = computed(() => [
     <AppCard
       v-for="(challenge, index) in challenges"
       :key="index"
+      class="intro-challenge-card"
     >
       <template #title>
         <h3
@@ -83,11 +84,12 @@ const challenges = computed(() => [
         <p
           v-for="(desc, i) in challenge.description"
           :key="i"
-          v-html="desc"
+          v-dompurify-html="desc"
         />
       </template>
       <template #action>
         <AppButton
+          :id="`intro-challenge-${index}`"
           variant="secondary"
           @click="$router.push({ name: challenge.routeName })"
         >

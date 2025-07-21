@@ -14,7 +14,7 @@ const changeProfilePicture = () => {
 </script>
 
 <template>
-  <div class="profile-picture flex flex-col">
+  <div class="profile-picture flex flex-col items-center">
     <img
       :src="props.imageProfileUrl"
       alt="profile image"
