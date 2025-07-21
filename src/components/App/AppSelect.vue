@@ -45,7 +45,7 @@
     <Icon
       v-if="showChevron"
       icon="mdi:chevron-down"
-      class="ml-auto h-5 w-5 shrink-0 transition-transform"
+      class="ml-auto h-5 w-5 transition-transform"
       :class="isOpen ? 'rotate-180' : ''"
     />
 

@@ -123,15 +123,20 @@ const weekDays = [
   <div class="grid grid-col-7 gap-1">
     <div
       v-for="weekDay in weekDays"
+      :key="weekDay"
       class="text-center"
     >
       <div>{{ weekDay }}</div>
     </div>
   </div>
   <div class="grid grid-cols-7">
-    <div v-for="prepend in daystoPrepend" />
+    <div
+      v-for="prepend in daystoPrepend"
+      :key="prepend"
+    />
     <div
       v-for="day in days"
+      :key="day"
       class="border border-slate-200 flex flex-col h-32"
     >
       <div

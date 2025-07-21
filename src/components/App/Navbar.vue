@@ -4,7 +4,8 @@ import { useWindowSize } from '@vueuse/core'
 import { computed, ref } from 'vue'
 
 import AppI18n from './AppI18n.vue'
-import AppNavLink from './AppNavMenu.vue'
+
+import AppNavMenuItem from '@/components/App/AppNavMenuItem.vue'
 
 const open = ref(false)
 const { width } = useWindowSize()
@@ -16,18 +17,19 @@ defineOptions({
 </script>
 
 <template>
-  <div class="min-h-12 sticky top-0">
+  <div class="min-h-12 sticky top-0 z-10">
     <div class="antialiased bg-gray-900 shadow-md">
       <div class="w-full text-gray-200 bg-gray-800">
         <div
           x-data="{ open: true }"
-          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+          class="flex flex-col px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
         >
           <div class="flex flex-row items-center justify-between p-4">
             <a
               href="#"
               class="text-lg font-semibold tracking-widest uppercase rounded-lg text-white focus:outline-none focus:shadow-outline"
-            >{{ $t('company.name') }}</a>
+            >{{
+              $t('company.name') }}</a>
             <button
               class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
               @click="open = !open"
@@ -52,26 +54,19 @@ defineOptions({
           >
             <nav
               v-show="open || !isMobile"
-              class="flex flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
+              class="flex flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row gap-6 items-center"
             >
-              <AppNavLink router-name="home">
-                {{ $t('navigation.navbar.home') }}
-              </AppNavLink>
-              <AppNavLink router-name="intro">
-                {{ $t('navigation.navbar.intro') }}
-              </AppNavLink>
-              <AppNavLink router-name="profile">
-                {{ $t('navigation.navbar.profile') }}
-              </AppNavLink>
-              <AppNavLink router-name="event-calendar">
-                {{ $t('navigation.navbar.calendar') }}
-              </AppNavLink>
-              <AppNavLink router-name="register-user">
-                {{ $t('navigation.navbar.register') }}
-              </AppNavLink>
-              <AppNavLink router-name="contact">
-                {{ $t('navigation.navbar.contact') }}
-              </AppNavLink>
+              <AppNavMenuItem :to="{ name: 'home' }">
+                <template #label>
+                  {{ $t('navigation.navbar.home') }}
+                </template>
+              </AppNavMenuItem>
+              <AppNavMenuItem :to="{ name: 'register-user' }">
+                <template #label>
+                  {{ $t('navigation.navbar.register') }}
+                </template>
+              </AppNavMenuItem>
+
               <AppI18n />
             </nav>
           </transition>

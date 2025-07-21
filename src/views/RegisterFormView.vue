@@ -1,5 +1,5 @@
 <script setup>
-import AppButton from '@/components/App/AppButton.vue'
+import AppButtonBack from '@/components/App/AppButtonBack.vue'
 import RegisterForm from '@/components/Forms/RegisterForm.vue'
 
 /*
@@ -33,11 +33,11 @@ const submit = () => {
   <section class="h-full flex items-stretch text-white ">
     <div
       class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
-      style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);"
+      style="background-image: url('/register-bg-for-web.webp');"
     >
       <div class="absolute bg-black opacity-60 inset-0 z-0" />
       <div class="w-full px-24 z-10 hidden lg:block">
-        <h1 class="text-secondary-500 text-5xl font-bold text-left tracking-wide">
+        <h1 class="text-secondary-700 text-5xl font-bold text-left tracking-wide">
           {{ $t('company.slogan') }}
         </h1>
         <p class="text-wsmoke text-3xl my-4">
@@ -45,28 +45,22 @@ const submit = () => {
         </p>
       </div>
     </div>
-    <div class="lg:w-1/2 w-full flex items-center justify-center md:px-16 px-0 z-0 bg-wsmoke">
+    <div class="lg:w-1/2 w-full flex items-center justify-center md:px-16 px-0 z-0 bg-wsmoke h-screen">
       <div
         class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
-        style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);"
+        style="background-image: url('/register-bg-for-web.webp');"
       >
         <div class="absolute bg-black opacity-60 inset-0 z-0" />
       </div>
       <div
-        class="relative w-full max-w-[25rem] h-[-webkit-fill-available] mx-auto py-6 z-20 bg-wsmoke px-8 md:p-0 md:h-auto md:rounded md:shadow lg:shadow-none lg:rounded-none"
+        class="relative w-full max-w-[25rem] h-[-webkit-fill-available] mx-auto py-6 z-20 bg-wsmoke px-8 md:p-0 md:h-auto md:rounded md:shadow lg:shadow-none lg:rounded-none flex flex-col justify-between"
       >
         <div class="relative pb-12 -left-4 md:left-4 lg:-left-4 md:top-6 z-10">
-          <AppButton
-            icon="mdi:arrow-left-circle"
-            variant="link"
-            class="md:bg-wsmoke"
-            @click="$router.push({ name: 'home' })"
-          >
+          <AppButtonBack>
             {{ $t('navigation.backHome') }}
-          </AppButton>
+          </AppButtonBack>
         </div>
-
-        <RegisterForm class="h-[80vh]" />
+        <RegisterForm />
       </div>
     </div>
   </section>

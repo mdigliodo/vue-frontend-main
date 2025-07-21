@@ -1,15 +1,28 @@
 # Changelog
  
-Todos los cambios notables en este proyecto se documentarán en este archivo.
- 
-El formato está basado en [Mantenga un changelog](https://keepachangelog.com/en/1.1.0/),
-y este proyecto está adherido al [Versionado Semántico](https://semver.org/spec/v2.0.0.html).
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.4] - 21/07/2025
+- Styling introduction
+- Styling app card component
+- Add translations
+- Create button back component
+- Start challenge 3
+
+## [1.0.3] - 20/07/2025
+- Styling user detail
+- Finish challenge 2
+- Make user profile responsive
+- Make sidebar responsive
 
 ## [1.0.2] - 19/07/2025
 - Styling initial page
 - Styling challenge 1
 - Start challenge 2
-- Add some unit test
+- Add unit test
 
 ## [1.0.1] - 18/07/2025
 - Resolving: Challenge 1

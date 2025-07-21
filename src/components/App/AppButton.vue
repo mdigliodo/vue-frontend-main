@@ -3,7 +3,7 @@
   <component
     :is="'button'"
     :type="type"
-    :class="buttonClasses"
+    :class="[buttonClasses, iconPosition === 'next' ? 'flex-row-reverse' : '']"
     :disabled="isDisabled"
     :aria-busy="loading"
     :aria-disabled="isDisabled"
@@ -18,6 +18,7 @@
         :is="leadingIconComponent"
         v-if="!loading && leadingIconComponent"
         :icon="icon"
+        :class="iconSize"
       />
 
       <Icon
@@ -64,11 +65,15 @@ const props = defineProps({
   /* --- Content --- */
   text: { type: String, default: '' },
   icon: { type: [String, Object], default: undefined },
+  iconPosition: { type: String, default: 'pre', validator: (v) => ['pre', 'next'].includes(v) },
 
 })
 
 /* ----- State helpers ----- */
 const isDisabled = computed(() => props.disabled || props.loading)
+
+/* ----- State helpers ----- */
+const iconPosition = computed(() => props.iconPosition)
 
 /* ----- Icon resolution ----- */
 const hasLeadingVisual = computed(
@@ -103,10 +108,10 @@ const sizeClasses = {
 
 const iconSize = computed(() =>
   props.size === 'sm'
-    ? 'w-4 h-4'
+    ? 'text-xl'
     : props.size === 'lg'
-      ? 'w-6 h-6'
-      : 'w-5 h-5',
+      ? 'text-3xl'
+      : 'text-2xl',
 )
 
 const buttonClasses = computed(() => [
@@ -115,4 +120,5 @@ const buttonClasses = computed(() => [
   sizeClasses[props.size],
   props.block ? 'w-full' : '',
 ])
+
 </script>

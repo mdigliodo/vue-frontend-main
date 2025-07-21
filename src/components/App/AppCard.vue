@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white p-10 rounded-lg shadow-lg min-w-full">
+  <div class="bg-white rounded-lg shadow min-w-full flex flex-col justify-between">
     <div
       v-if="$slots.image"
-      class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96"
+      class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-wsmoke bg-clip-border rounded-xl h-96"
     >
       <slot name="image" />
     </div>
@@ -10,17 +10,15 @@
       v-if="$slots.title || $slots.description"
       class="p-6"
     >
-      <div class="flex items-center justify-between mb-2">
-        <p
-          v-if="$slots.title"
-          class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900"
-        >
-          <slot name="title" />
-        </p>
+      <div
+        v-if="$slots.title"
+        class="antialiased leading-relaxed text-primary-900"
+      >
+        <slot name="title" />
       </div>
       <p
         v-if="$slots.description"
-        class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75"
+        class="block font-sans text-sm antialiased font-normal leading-normal text-primary-700 "
       >
         <slot name="description" />
       </p>

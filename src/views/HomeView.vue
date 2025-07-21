@@ -26,20 +26,19 @@
         <!-- Add more content or buttons here if needed -->
         <div class="flex gap-2">
           <AppButton
+            icon="mdi:arrow-right"
+            icon-position="next"
             variant="secondary"
-            @click="$router.push({ name: 'intro' })"
+            @click="$router.push({ name: 'introduction' })"
           >
             {{ $t('home.introButton') }}
-          </AppButton>
-          <AppButton variant="outline">
-            {{ $t('home.liveDemoButton') }}
           </AppButton>
         </div>
       </div>
       <!-- Right: Image Slot -->
       <div class="flex-1 flex justify-center mb-7 sm:mb-0">
         <img
-          src="/homeBanner.jpg"
+          src="/register-bg-for-web.webp"
           alt="Challenge"
           class="rounded-lg shadow-lg w-full max-w-md object-cover"
         >
