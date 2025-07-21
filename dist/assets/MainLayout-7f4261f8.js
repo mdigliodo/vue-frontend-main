@@ -1,0 +1,1 @@
+import{o as s,b as a,n as t}from"./index-95c6354b.js";const n={class:"h-screen w-screen flex flex-col"},l=Object.assign({name:"MainLayout"},{__name:"MainLayout",setup(o){return(e,c)=>(s(),a("div",n,[t(e.$slots,"default")]))}});export{l as default};
