@@ -6,7 +6,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="h-screen w-screen flex flex-col">
+  <main>
     <slot />
-  </div>
+  </main>
 </template>

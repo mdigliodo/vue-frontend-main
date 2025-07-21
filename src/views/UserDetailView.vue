@@ -132,7 +132,7 @@ const changeTab = (tab) => {
 </script>
 
 <template>
-  <section class="h-full flex items-stretch bg-wsmoke">
+  <section class="min-h-full flex items-stretch bg-wsmoke">
     <!-- this menu will be hidden on small screens -->
     <div
       class="md:flex md:flex-col md:w-[40%] max-w-80 hidden border-x border-primary-200 bg-wsmoke bg-no-repeat text-primary-900 relative px-4 py-6"

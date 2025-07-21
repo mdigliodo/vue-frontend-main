@@ -12,7 +12,7 @@ defineOptions({
     <AppNavbar />
     <div class="overflow-y-auto flex flex-1">
       <AppSidebar />
-      <main class="flex-1 overflow-y-auto pb-16 lg:pb-8">
+      <main class="flex-1 overflow-y-auto pb-16 lg:pb-0">
         <slot />
       </main>
     </div>

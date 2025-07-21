@@ -10,7 +10,7 @@ defineOptions({
   <div class="h-screen w-screen flex flex-col bg-wsmoke">
     <AppNavbar />
     <div class="overflow-y-auto flex flex-1">
-      <main class="flex-1 overflow-y-auto">
+      <main class="flex-1 overflow-y-scroll">
         <slot />
       </main>
     </div>
