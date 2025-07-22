@@ -1,1 +1,0 @@
-import{o as e,d as t,r as n}from"./index-2457fc58.js";const l=Object.assign({name:"MainLayout"},{__name:"MainLayout",setup(o){return(a,r)=>(e(),t("main",null,[n(a.$slots,"default")]))}});export{l as default};
