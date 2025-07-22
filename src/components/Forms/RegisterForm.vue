@@ -169,7 +169,11 @@ const redirectToIntro = () => {
       </template>
       <template #body>
         <div class="content-body">
-          <h3 class="text-2xl font-bold m-0 text-center">
+          <h3
+            id="success-user-register"
+            aria-level="2"
+            class="text-2xl font-bold m-0 text-center"
+          >
             {{ $t('registerForm.successTitle') }}
           </h3>
           <p class="text-primary-600 mb-4 text-center">

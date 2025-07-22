@@ -56,18 +56,24 @@ defineOptions({
               v-show="open || !isMobile"
               class="flex flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row gap-6 items-center"
             >
-              <AppNavMenuItem :to="{ name: 'home' }">
+              <AppNavMenuItem
+                id="home-nav-menu-item"
+                :to="{ name: 'home' }"
+              >
                 <template #label>
                   {{ $t('navigation.navbar.home') }}
                 </template>
               </AppNavMenuItem>
-              <AppNavMenuItem :to="{ name: 'register-user' }">
+              <AppNavMenuItem
+                id="register-nav-menu-item"
+                :to="{ name: 'register-user' }"
+              >
                 <template #label>
                   {{ $t('navigation.navbar.register') }}
                 </template>
               </AppNavMenuItem>
 
-              <AppI18n />
+              <AppI18n id="navbar-i18n" />
             </nav>
           </transition>
         </div>

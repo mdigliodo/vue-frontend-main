@@ -137,7 +137,10 @@ const changeTab = (tab) => {
     <div
       class="md:flex md:flex-col md:w-[40%] max-w-80 hidden border-x border-primary-200 bg-wsmoke bg-no-repeat text-primary-900 relative px-4 py-6"
     >
-      <h3 class="font-semibold text-2xl mb-4">
+      <h3
+        id="title-user-profile-view"
+        class="font-semibold text-2xl mb-4"
+      >
         {{ $t('profile.navbar.title') }}
       </h3>
       <p>
@@ -146,7 +149,8 @@ const changeTab = (tab) => {
 
       <div class="tab-container mt-10 hidden md:flex flex-col gap-2 items-start">
         <AppButton
-          v-for="tab in tabs"
+          v-for="(tab, index) in tabs"
+          :id="`tab-sidebar-${index}`"
           :key="`tab-${tab.translation}`"
           variant="link"
           :class="[ activeTabIndex === tab.id ? 'text-secondary-700' : '' ]"
@@ -170,6 +174,7 @@ const changeTab = (tab) => {
       </div>
       <div class="accordion-container p-6 gap-4 flex flex-col w-full pb-20 lg:pb-8">
         <AppProfileUserImage
+          id="change-profile-picture"
           :image-profile-url="userData.image"
           :show-change-option="true"
         />

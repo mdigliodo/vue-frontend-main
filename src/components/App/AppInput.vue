@@ -64,6 +64,7 @@ defineEmits(['update:modelValue'])
     >
       <li
         v-for="(error, index) in errors"
+        :id="`${id}-error`"
         :key="'error-' + index"
         class="text-red-500 text-sm"
       >

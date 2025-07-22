@@ -9,6 +9,7 @@
     flex-col-reverse
     justify-evenly
     md:flex-row
+    md:gap-12
     items-center
     md:max-w-[80%]"
     >
@@ -17,10 +18,16 @@
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
           {{ $t('home.title') }}
         </h1>
-        <p class="text-lg md:text-xl text-gray-600 mb-6">
+        <p
+          id="subtitle"
+          class="text-lg md:text-xl text-gray-600 mb-6"
+        >
           {{ $t('home.subtitle') }}
         </p>
-        <p class="text-lg md:text-xl text-gray-600 mb-6">
+        <p
+          id="subtitle-invite"
+          class="text-lg md:text-xl text-gray-600 mb-6"
+        >
           {{ $t('home.getReady') }}
         </p>
         <!-- Add more content or buttons here if needed -->
@@ -37,11 +44,11 @@
         </div>
       </div>
       <!-- Right: Image Slot -->
-      <div class="flex-1 flex justify-center mb-7 sm:mb-0">
+      <div class="grid justify-center mb-7 sm:mb-0">
         <img
-          src="/register-bg-for-web.webp"
+          src="/img/undraw_programming_65t2.svg"
           alt="Challenge"
-          class="rounded-lg shadow-lg w-full max-w-md object-cover"
+          class="rounded-lg w-full max-w-md object-cover"
         >
       </div>
     </div>
