@@ -33,7 +33,7 @@ const submit = () => {
   <section class="flex items-stretch text-white h-[-webkit-fill-available]">
     <div
       class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
-      style="background-image: url('/register-bg-for-web.webp');"
+      style="background-image: url('./register-bg-for-web.webp');"
     >
       <div class="absolute bg-black opacity-60 inset-0 z-0" />
       <div class="w-full px-24 z-10 hidden lg:block">
@@ -48,7 +48,7 @@ const submit = () => {
     <div class="relative lg:w-1/2 w-full flex md:items-center justify-center md:px-16 px-0 z-0 bg-wsmoke">
       <div
         class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
-        style="background-image: url('/register-bg-for-web.webp');"
+        style="background-image: url('./register-bg-for-web.webp');"
       >
         <div class="absolute bg-black opacity-60 inset-0 z-0" />
       </div>
