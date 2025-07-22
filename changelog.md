@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add modals container for Teleport
 - Add translations
 - Add playwright test
+- Add scroll to top after redirect
 
 ## [1.0.4] - 21/07/2025
 - Styling introduction

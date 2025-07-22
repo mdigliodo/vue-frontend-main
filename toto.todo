@@ -44,11 +44,9 @@ A list of task for doing in this challenge:
 [X] Upload challenge to my github
 [X] Deploy to pages of github
 [X] Enhance responsive layouts
-[ ] Add modals and redirect after register user
-[ ] Enhance unit test
-
+[X] Add modals and redirect after register user
+[X] Configure playwright
+[X] Create test with playwright
 
 [ ] Enhance card type, show image of mastercard - optional - design
-[ ] Configure playwright
-[ ] Create the first test with playwright
 [ ] For each screen or challenge explain briefly words what was my approach do the exercice
