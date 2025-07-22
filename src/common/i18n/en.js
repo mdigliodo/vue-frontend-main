@@ -56,8 +56,10 @@ export default {
         title: 'Registration Form',
         description: 'Please fill out the form below to register.',
         submitButton: 'Create Account',
-        successMessage: 'Registration successful!',
+        successTitle: 'Success!',
+        successMessage: 'Your registration was successful.',
         errorMessage: 'There was an error with your registration. Please try again.',
+        redirectToIntro: 'Back to Introduction',
     },
     profile: {
         navbar: {
@@ -125,6 +127,21 @@ export default {
             thursday: 'Thursday',
             friday: 'Friday',
             saturday: 'Saturday',
+        },
+    },
+    modals: {
+        success: {
+            title: 'Success',
+            message: 'Your action was successful!',
+        },
+        error: {
+            title: 'Error',
+            message: 'There was an error processing your request. Please try again.',
+        },
+        buttons: {
+            close: 'Close',
+            confirm: 'Confirm',
+            cancel: 'Cancel',
         },
     },
 }

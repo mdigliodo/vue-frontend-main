@@ -1,5 +1,5 @@
 <script>
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 
 export function useForm (rules, fields = null) {
     // We can extract this logic from the component to a composable for better reusability
@@ -27,6 +27,7 @@ export function useForm (rules, fields = null) {
 
     // Validate a single field
     function validateField (key) {
+        let errorsCount = 0
         touched[key] = true
         const value = formData[key]
         const rulesObj = rules[key] || {}
@@ -36,33 +37,36 @@ export function useForm (rules, fields = null) {
             const error = rule(value, formData)
             if (error) {
                 errors[key].push(error)
+                errorsCount++
                 return
             }
         }
+
+        return errorsCount === 0
     }
 
     function validateAllFields () {
         Object.keys(formData).forEach(f => validateField(f))
     }
 
-    const hasErrors = computed(() =>
-        Object.values(errors).some(e => e !== null),
-    )
-
-    const isValid = computed(() => !hasErrors.value)
-
     const isPristine = computed(() => {
         return Object.values(touched).every(v => !v)
     })
+
+    const hasError = ref(false)
+    watch(() => errors, (error) => {
+        hasError.value = Object.values(error).some(e => {
+            return e.length > 0
+        })
+    }, { deep: true })
 
     return {
         errors,
         formData,
         touched,
-        hasErrors,
+        hasError,
         isPristine,
         isSaving,
-        isValid,
         validateField,
         validateAllFields,
     }

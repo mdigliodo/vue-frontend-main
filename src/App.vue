@@ -12,4 +12,5 @@ defineOptions({
   <DynamicLayout class="h-screen w-screen">
     <router-view />
   </DynamicLayout>
+  <div id="modal-container" />
 </template>

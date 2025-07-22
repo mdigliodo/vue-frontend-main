@@ -2,7 +2,7 @@
 import { mount, config } from '@vue/test-utils'
 import { describe, test, expect, vi } from 'vitest'
 
-import RegisterForm from '@/views/RegisterFormView.vue'
+import RegisterForm from '@/components/Forms/RegisterForm.vue'
 
 // Mock i18n globally
 config.global.mocks = {

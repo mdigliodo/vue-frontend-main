@@ -24,10 +24,7 @@ defineProps({
 
 const attrs = useAttrs()
 
-// fallback if no "type" attribute is provided
 const typeInput = ref(attrs.type || 'text')
-
-console.log('type attrs', typeInput.value)
 
 const togglePasswordVisibility = () => {
   typeInput.value = typeInput.value === 'password' ? 'text' : 'password'

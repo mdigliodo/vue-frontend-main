@@ -56,8 +56,10 @@ export default {
         title: 'Formulario de Registro',
         description: 'Por favor, completa el formulario a continuación para registrarte.',
         submitButton: 'Enviar',
-        successMessage: '¡Registro exitoso!',
+        successTitle: '¡Éxito!',
+        successMessage: 'Tu registro ha sido exitoso.',
         errorMessage: 'Hubo un error con tu registro. Por favor, inténtalo de nuevo.',
+        redirectToIntro: 'Volver a la Introducción',
     },
     profile: {
         navbar: {
@@ -125,6 +127,21 @@ export default {
             thursday: 'Jueves',
             friday: 'Viernes',
             saturday: 'Sábado',
+        },
+    },
+    modals: {
+        success: {
+            title: 'Éxito',
+            message: '¡Tu acción fue exitosa!',
+        },
+        error: {
+            title: 'Error',
+            message: 'Hubo un error al procesar tu solicitud. Por favor, inténtalo de nuevo.',
+        },
+        buttons: {
+            close: 'Cerrar',
+            confirm: 'Confirmar',
+            cancel: 'Cancelar',
         },
     },
 }
