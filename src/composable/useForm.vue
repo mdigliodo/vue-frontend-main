@@ -27,7 +27,6 @@ export function useForm (rules, fields = null) {
 
     // Validate a single field
     function validateField (key) {
-        let errorsCount = 0
         touched[key] = true
         const value = formData[key]
         const rulesObj = rules[key] || {}
@@ -37,12 +36,9 @@ export function useForm (rules, fields = null) {
             const error = rule(value, formData)
             if (error) {
                 errors[key].push(error)
-                errorsCount++
                 return
             }
         }
-
-        return errorsCount === 0
     }
 
     function validateAllFields () {

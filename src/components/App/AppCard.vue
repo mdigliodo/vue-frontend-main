@@ -29,9 +29,10 @@ export default {
         <slot name="description" />
       </p>
     </div>
-    <div v-if="$slots.htmlContent">
-      <slot name="htmlContent" />
-    </div>
+    <slot
+      v-if="$slots.htmlContent"
+      name="htmlContent"
+    />
     <div
       v-if="$slots.action"
       class="p-6 pt-0 flex flex-col gap-2"

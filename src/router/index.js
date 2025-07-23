@@ -6,7 +6,7 @@ import HomeView from '@/views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior: () => {
-    return { top: 0 }
+    return { top: 0, behavior: 'smooth' }
   },
   routes: [
     {
@@ -49,34 +49,6 @@ const router = createRouter({
         {
           path: 'calendar',
           name: 'calendar',
-          component: () => import('@/views/EventCalendarView.vue'),
-        },
-      ],
-    },
-    {
-      path: '/challenges',
-      meta: {
-        layout: 'ChallengeLayout',
-      },
-      children: [
-        {
-          path: '',
-          name: 'intro',
-          component: () => import('@/views/IntroView.vue'),
-        },
-        {
-          path: 'register-form',
-          name: 'register-form',
-          component: () => import('@/views/RegisterFormView.vue'),
-        },
-        {
-          path: 'user-detail',
-          name: 'user-detail',
-          component: () => import('@/views/UserDetailView.vue'),
-        },
-        {
-          path: 'event-calendar',
-          name: 'event-calendar',
           component: () => import('@/views/EventCalendarView.vue'),
         },
       ],

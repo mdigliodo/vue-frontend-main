@@ -10,9 +10,9 @@ defineOptions({
 <template>
   <div class="h-screen w-screen flex flex-col bg-wsmoke">
     <AppNavbar />
-    <div class="overflow-y-auto flex flex-1">
+    <div class="flex flex-1">
       <AppSidebar />
-      <main class="flex-1 overflow-y-auto pb-16 lg:pb-0">
+      <main class="flex-1 pb-16 lg:pb-0">
         <slot />
       </main>
     </div>

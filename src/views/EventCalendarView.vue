@@ -90,6 +90,7 @@ const eventsMap = computed(() => {
 })
 
 dayjs.extend(isToday)
+dayjs.locale(es, en) // load locale for later use
 
 const viewDate = ref(dayjs())
 
@@ -118,8 +119,8 @@ const days = computed(() => {
 const shiftMonth = function (amount) {
   viewDate.value = viewDate.value.add(amount, 'month')
 }
-const reset = function () {
-  viewDate.value = dayjs()
+const reset = async function () {
+  viewDate.value = await dayjs()
 }
 
 const weekDays = computed(() => [
@@ -133,11 +134,7 @@ const weekDays = computed(() => [
 ])
 
 watch(locale, () => {
-  dayjs.locale(locale.value, locale.value === 'es' ? es : en)
-  reset()
-  if (locale.value === 'es') {
-    daystoPrepend.value.push(1) // Force recalculation of days to prepend
-  }
+  dayjs.locale(locale.value)
 })
 
 </script>

@@ -26,7 +26,7 @@ const toggleAccordion = async () => {
     // If div has id attribute, scroll to it
     if (!attrs.id) return
     const acordionElement = document.getElementById(attrs.id)
-    await nextTick(() => acordionElement?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+    await nextTick(() => acordionElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }))
 }
 </script>
 <template>

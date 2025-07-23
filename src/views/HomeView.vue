@@ -46,7 +46,7 @@
       <!-- Right: Image Slot -->
       <div class="grid justify-center mb-7 sm:mb-0">
         <img
-          src="/img/undraw_programming_65t2.svg"
+          src="https://portfolio-images-v1.s3.us-east-2.amazonaws.com/images/undraw_programming_65t2.svg"
           alt="Challenge"
           class="rounded-lg w-full max-w-md object-cover"
         >

@@ -12,12 +12,12 @@ config.global.mocks = {
 describe('BankInfoForm.vue', () => {
   const factory = () => mount(BankInfoForm)
 
-  test('renders four empty inputs on mount', () => {
+  test('renders one empty input on mount', () => {
     const wrapper = factory()
     const inputs = wrapper.findAll('input')
-    expect(inputs).toHaveLength(5)
+    expect(inputs).toHaveLength(1)
     const values = inputs.map(i => i.element.value)
-    expect(values).toEqual(['', '', '', '', ''])
+    expect(values).toEqual([''])
   })
 
   test('typing in iban updates data.iban and make sure is read-only true', async () => {
@@ -30,35 +30,22 @@ describe('BankInfoForm.vue', () => {
     expect(iban.attributes('aria-readonly')).toBe('true')
   })
 
-  test('typing in cardNumber updates data.cardNumber and make sure is read-only true', async () => {
+  test('renders the card information correctly', () => {
     const wrapper = factory()
-    const cardNumber = wrapper.find('input[id="cardNumber-input"]')
-    await cardNumber.setValue('50380955204220685')
-    expect(cardNumber.element.value).toBe('50380955204220685')
-    expect(cardNumber.attributes('aria-readonly')).toBe('true')
-  })
+    const cardInfo = wrapper.findComponent({ name: 'AppBankCard' })
 
-  test('typing in cardType updates data.cardType and make sure is read-only true', async () => {
-    const wrapper = factory()
-    const cardType = wrapper.find('input[id="cardType-input"]')
-    await cardType.setValue('master')
-    expect(cardType.element.value).toBe('master')
-    expect(cardType.attributes('aria-readonly')).toBe('true')
-  })
+    expect(cardInfo.exists()).toBe(true)
+    expect(cardInfo.find('#cardNumber-input')).toBeDefined()
+    expect(cardInfo.find('#cardOwner-input')).toBeDefined()
+    expect(cardInfo.find('#cardExpire-input')).toBeDefined()
 
-  test('typing in cardExpire updates data.cardExpire and make sure is read-only true', async () => {
-    const wrapper = factory()
-    const cardExpire = wrapper.find('input[id="cardExpire-input"]')
-    await cardExpire.setValue('12/25')
-    expect(cardExpire.element.value).toBe('12/25')
-    expect(cardExpire.attributes('aria-readonly')).toBe('true')
-  })
-
-  test('typing in currency updates data.currency and make sure is read-only true', async () => {
-    const wrapper = factory()
-    const currency = wrapper.find('input[id="currency-input"]')
-    await currency.setValue('NOK')
-    expect(currency.element.value).toBe('NOK')
-    expect(currency.attributes('aria-readonly')).toBe('true')
+    expect(cardInfo.props().info).toEqual({
+      cardNumber: undefined,
+      cardOwner: 'undefined undefined',
+      cardExpire: '12/25',
+      cardType: 'maestro',
+      currency: undefined,
+      iban: undefined,
+    })
   })
 })
