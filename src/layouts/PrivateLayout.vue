@@ -2,9 +2,6 @@
 import AppNavbar from '@/components/App/AppNavbar.vue'
 import AppSidebar from '@/components/App/AppSidebar.vue'
 
-defineOptions({
-  name: 'PrivateLayout',
-})
 </script>
 
 <template>

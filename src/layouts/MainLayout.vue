@@ -1,9 +1,4 @@
-<script setup>
-
-defineOptions({
-  name: 'MainLayout',
-})
-</script>
+<script setup></script>
 
 <template>
   <main>

@@ -3,8 +3,6 @@ import { Icon } from '@iconify/vue'
 import { useWindowSize } from '@vueuse/core'
 import { computed } from 'vue'
 
-const { width } = useWindowSize()
-
 const props = defineProps({
     event: {
         type: Object,
@@ -13,6 +11,8 @@ const props = defineProps({
 })
 
 const event = computed(() => props.event)
+
+const { width } = useWindowSize()
 const isMobile = computed(() => width.value < 768)
 
 </script>

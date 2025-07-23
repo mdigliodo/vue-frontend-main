@@ -48,7 +48,7 @@ const leadingIconComponent = computed(() => {
   return props.icon
 })
 
-/* ----- Tailwind class builders ----- */
+/* ----- Base class builders ----- */
 const base =
   'inline-flex items-center justify-center rounded font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors duration-200'
 

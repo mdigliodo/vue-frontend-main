@@ -3,6 +3,7 @@ import { Icon } from '@iconify/vue'
 import { defineProps, defineEmits, computed, useSlots } from 'vue'
 
 const props = defineProps({
+    /* --- Variants --- */
     closeOnEsc: {
         type: Boolean,
         default: true,

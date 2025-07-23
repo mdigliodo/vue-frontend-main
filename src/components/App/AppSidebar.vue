@@ -3,10 +3,6 @@ import { Icon } from '@iconify/vue'
 
 import AppNavMenuItem from '@/components/App/AppNavMenuItem.vue'
 
-defineOptions({
-  name: 'AppSidebar',
-})
-
 </script>
 
 <template>

@@ -9,9 +9,7 @@ import {
 } from 'vue'
 
 const props = defineProps({
-  modelValue: { type: [String, Number, Array], default: '' },
-  options: { type: Array, required: true }, // [{ value, label }]
-  multiple: { type: Boolean, default: false },
+  /* --- Variants --- */
   name: { type: String, required: true },
   variant: {
     type: String,
@@ -28,6 +26,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  multiple: { type: Boolean, default: false },
+  /* --- Content --- */
+  modelValue: { type: [String, Number, Array], default: '' },
+  options: { type: Array, required: true }, // [{ value, label }]
 })
 
 const emit = defineEmits(['update:modelValue'])

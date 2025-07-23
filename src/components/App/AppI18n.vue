@@ -4,10 +4,6 @@ import { useI18n } from 'vue-i18n'
 
 import AppSelect from './AppSelect.vue'
 
-defineOptions({
-    name: 'AppI18n',
-})
-
 const { t } = useI18n()
 
 const languages = [

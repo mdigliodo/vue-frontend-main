@@ -1,8 +1,4 @@
-<script>
-export default {
-    name: 'AppCard',
-}
-</script>
+<script setup></script>
 
 <template>
   <div class="bg-white rounded-lg shadow flex flex-col justify-between">
@@ -41,5 +37,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped></style>

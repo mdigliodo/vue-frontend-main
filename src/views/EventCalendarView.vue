@@ -23,6 +23,7 @@ Siéntete libre de modificar tanto código como sea necesario salvo el modelo de
 */
 
 const { t, locale } = useI18n()
+
 const { width } = useWindowSize()
 const isMobile = computed(() => width.value < 768)
 

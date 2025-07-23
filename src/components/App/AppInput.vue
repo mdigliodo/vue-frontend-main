@@ -3,11 +3,18 @@ import { Icon } from '@iconify/vue'
 import { defineProps, defineEmits, useAttrs, ref } from 'vue'
 
 const props = defineProps({
+  /* --- Variants --- */
   id: {
     type: String,
     default: '',
     required: true,
   },
+  copySuffix: {
+    type: Boolean,
+    default: false,
+  },
+
+  /* --- Content --- */
   label: {
     type: [String, Boolean],
     default: false,
@@ -19,10 +26,6 @@ const props = defineProps({
   errors: {
     type: Array,
     default: () => [],
-  },
-  copySuffix: {
-    type: Boolean,
-    default: false,
   },
 })
 

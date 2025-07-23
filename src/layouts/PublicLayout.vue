@@ -1,9 +1,6 @@
 <script setup>
 import AppNavbar from '@/components/App/AppNavbar.vue'
 
-defineOptions({
-  name: 'PublicLayout',
-})
 </script>
 
 <template>
