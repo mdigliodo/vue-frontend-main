@@ -20,6 +20,10 @@ defineProps({
     type: Array,
     default: () => [],
   },
+  copySuffix: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const attrs = useAttrs()
@@ -28,6 +32,15 @@ const typeInput = ref(attrs.type || 'text')
 
 const togglePasswordVisibility = () => {
   typeInput.value = typeInput.value === 'password' ? 'text' : 'password'
+}
+
+const copyOnClipboard = async (value) => {
+  try {
+    await navigator.clipboard.writeText(value)
+    console.log('Text copied to clipboard: ', value)
+  } catch (err) {
+    console.error('Failed to copy text: ', err)
+  }
 }
 
 defineEmits(['update:modelValue'])
@@ -57,6 +70,15 @@ defineEmits(['update:modelValue'])
         class="absolute right-3 bottom-2 -translate-y-1/2 text-primary-400 cursor-pointer"
         @click="togglePasswordVisibility"
       />
+      <div
+        v-if="copySuffix"
+        class="absolute right-1 bottom-2 -translate-y-1/2 text-primary-400 cursor-pointer"
+      >
+        <Icon
+          icon="mdi:content-copy"
+          @click="copyOnClipboard(modelValue)"
+        />
+      </div>
     </div>
     <ul
       v-if="errors && errors.length"

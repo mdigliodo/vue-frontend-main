@@ -30,20 +30,21 @@ const cardInformation = computed(() => ({
         <img
           :src="CountryCurrencyCodes[cardInformation.currency]?.flag"
           alt="Currency flag"
-          class="h-10 w-10"
+          class="h-8 w-8 md:h-10 md:w-10"
         >
         <strong>{{ CountryCurrencyCodes[cardInformation.currency]?.code }}</strong>
       </div>
 
       <AppInput
         id="iban-input"
-        :value="props.data.bank?.iban"
-        aria-label="iban"
-        :label="$t('profile.bankInformation.iban')"
-        type="text"
         aria-readonly="true"
-        :readonly="true"
+        aria-label="iban"
         class="col-span-3 md:col-span-2 md:min-w-[20rem]"
+        type="text"
+        :label="$t('profile.bankInformation.iban')"
+        :copy-suffix="true"
+        :value="props.data.bank?.iban"
+        :readonly="true"
       />
       <AppBankCard
         class="col-start-1 md:col-start-2 md:col-end-3"
