@@ -19,7 +19,7 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-OT76KXEP.js";
+} from "./chunk-IDACCYAP.js";
 
 // node_modules/vue-router/dist/vue-router.mjs
 var isBrowser = typeof document !== "undefined";

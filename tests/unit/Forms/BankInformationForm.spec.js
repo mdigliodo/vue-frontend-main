@@ -48,4 +48,14 @@ describe('BankInfoForm.vue', () => {
       iban: undefined,
     })
   })
+
+  test('iban must hace the option to copy to clipboard', async () => {
+    const wrapper = factory()
+    const ibanInput = wrapper.find('input[id="iban-input"]')
+    expect(ibanInput.exists()).toBe(true)
+    expect(ibanInput.attributes('aria-readonly')).toBe('true')
+
+    const copyButton = wrapper.find('#copy-iban-input')
+    expect(copyButton.exists()).toBe(true)
+  })
 })
