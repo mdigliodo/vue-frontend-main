@@ -36,16 +36,11 @@ const props = defineProps({
           </p>
         </div>
         <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <small for="cardOwner-input">
-              {{ $t('profile.bankInformation.cardOwner') }}
-            </small>
-            <p
-              id="cardOwner-input"
-            >
-              {{ props.info.cardOwner }}
-            </p>
-          </div>
+          <p
+            id="cardOwner-input"
+          >
+            {{ props.info.cardOwner }}
+          </p>
           <div class="flex flex-col">
             <small for="cardExpire-input">
               {{ $t('profile.bankInformation.cardExpire') }}

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhance user profile bank account details
 - Enhance currency and IBAN imputs
 - Change favicon
+- Add copy option as suffix input
 
 ## [1.0.5] - 22/07/2025
 - Adding modal component
