@@ -2,7 +2,7 @@
 import { Icon } from '@iconify/vue'
 import { defineProps, defineEmits, useAttrs, ref } from 'vue'
 
-defineProps({
+const props = defineProps({
   id: {
     type: String,
     default: '',
@@ -29,6 +29,8 @@ defineProps({
 const attrs = useAttrs()
 
 const typeInput = ref(attrs.type || 'text')
+const valueInput = ref(attrs.value)
+const copied = ref(false)
 
 const togglePasswordVisibility = () => {
   typeInput.value = typeInput.value === 'password' ? 'text' : 'password'
@@ -37,6 +39,10 @@ const togglePasswordVisibility = () => {
 const copyOnClipboard = async (value) => {
   try {
     await navigator.clipboard.writeText(value)
+    copied.value = true
+    setTimeout(() => {
+      copied.value = false
+    }, 1500)
     console.log('Text copied to clipboard: ', value)
   } catch (err) {
     console.error('Failed to copy text: ', err)
@@ -51,14 +57,14 @@ defineEmits(['update:modelValue'])
   <div class="relative group mb-5">
     <label
       v-if="label"
-      :for="id"
+      :for="props.id"
       class="text-primary-700 font-medium group-focus-within:text-secondary-700"
     >{{ label
     }}</label>
     <div class="relative">
       <input
-        :id="id"
-        :value="modelValue"
+        :id="props.id"
+        :value="props.modelValue"
         class="group w-full bg-primary-50 py-2 border-b-2 border-primary-200 text-primary-900 focus:outline-none focus:border-secondary-700 transition-colors read-only:cursor-pointer"
         v-bind="$attrs"
         :type="typeInput"
@@ -70,14 +76,29 @@ defineEmits(['update:modelValue'])
         class="absolute right-3 bottom-2 -translate-y-1/2 text-primary-400 cursor-pointer"
         @click="togglePasswordVisibility"
       />
+
       <div
         v-if="copySuffix"
-        class="absolute right-1 bottom-2 -translate-y-1/2 text-primary-400 cursor-pointer"
+        class="relative cursor-pointer text-primary-400 "
       >
-        <Icon
-          icon="mdi:content-copy"
-          @click="copyOnClipboard(modelValue)"
-        />
+        <Transition name="slide-fade">
+          <Icon
+            v-if="!copied"
+            :id="`copy-${id}`"
+            icon="mdi:content-copy"
+            class="absolute right-3 bottom-2 -translate-y-1/2"
+            @click="copyOnClipboard(valueInput)"
+          />
+        </Transition>
+        <Transition name="slide-fade">
+          <small
+            v-if="copied"
+            :id="`copied-${id}`"
+            class="absolute right-3 bottom-2 -translate-y-1/2"
+          >
+            {{ $t('action.copied') }}
+          </small>
+        </Transition>
       </div>
     </div>
     <ul
@@ -96,3 +117,24 @@ defineEmits(['update:modelValue'])
     </ul>
   </div>
 </template>
+
+<style scoped>
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+</style>

@@ -19,6 +19,9 @@ export default {
         },
         backHome: 'Back to Home',
     },
+    action: {
+        copied: 'Copied!',
+    },
     home: {
         title: "Welcome to Ambar's Technical Challenge",
         subtitle: 'Explore and solve exciting coding challenges designed to boost your skills.',

@@ -19,6 +19,9 @@ export default {
         },
         backHome: 'Volver a Inicio',
     },
+    action: {
+        copied: 'Copiado!',
+    },
     home: {
         title: 'Bienvenido al Reto Técnico de Ambar',
         subtitle: 'Explora y resuelve emocionantes retos de programación diseñados para potenciar tus habilidades.',
