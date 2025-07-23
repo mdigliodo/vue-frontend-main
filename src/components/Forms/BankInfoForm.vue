@@ -25,7 +25,7 @@ const cardInformation = computed(() => ({
     {{ $t('profile.bankInformation.description') }}
   </p>
   <div class="flex flex-col md:flex-row md:justify-start gap-4 md:gap-20 mt-6">
-    <div class="grid grid-cols-4 items-start gap-4 md:gap-8">
+    <div class="grid grid-cols-4 items-start gap-4 md:gap-0 max-w-[48rem]">
       <div class="flex flex-col md:flex-row items-center gap-2 col-span-1">
         <img
           :src="CountryCurrencyCodes[cardInformation.currency]?.flag"

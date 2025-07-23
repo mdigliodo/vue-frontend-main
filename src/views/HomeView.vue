@@ -11,7 +11,7 @@
     md:flex-row
     md:gap-12
     items-center
-    md:max-w-[80%]"
+    md:max-w-[1080px]"
     >
       <!-- Left: Title and Subtitle -->
       <div class="flex-1 text-left mb-8 md:mb-0">
