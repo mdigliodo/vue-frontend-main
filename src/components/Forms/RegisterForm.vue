@@ -2,7 +2,7 @@
 import { Icon } from '@iconify/vue'
 import { useRouter } from 'vue-router'
 
-import { RequiredValidator, MinLength, EmailValidator, MaxLength, SameAs, PasswordValidator } from '@/common/validators'
+import { RequiredValidator, MinLength, EmailValidator, MaxLength, SameAs, PasswordValidator, MayusValidator } from '@/common/validators'
 import AppButton from '@/components/App/AppButton.vue'
 import AppInput from '@/components/App/AppInput.vue'
 import AppModal from '@/components/App/AppModal.vue'
@@ -40,6 +40,7 @@ const rules = {
     required: RequiredValidator(),
     minLength: MinLength(8, 'Password must be at least 8 characters long.'),
     password: PasswordValidator('Password must include a number and a special character.'),
+    mayus: MayusValidator('Password must include an uppercase letter.'),
   },
   confirmPassword: {
     required: RequiredValidator(),

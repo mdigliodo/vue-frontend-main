@@ -97,6 +97,7 @@ export default {
             iban: 'IBAN',
             cardNumber: 'Número de Tarjeta',
             cardType: 'Tipo de Tarjeta',
+            cardOwner: 'Nombre del Titular',
             cardExpire: 'Fecha de Expiración',
         },
         security: {

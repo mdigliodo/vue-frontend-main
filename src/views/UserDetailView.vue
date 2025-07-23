@@ -102,7 +102,7 @@ const tabs = [
   {
     id: 'bank-information',
     translation: 'bankInformation',
-    data: userData.bank,
+    data: userData,
     component: BankInfoForm,
   },
   {
