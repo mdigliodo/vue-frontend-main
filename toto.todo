@@ -48,7 +48,8 @@ A list of task for doing in this challenge:
 [X] Configure playwright
 [X] Create test with playwright
 [X] Enhance card type, show image of mastercard - design
-[ ] Enhance currency and IBAN imputs
+[X] Enhance currency and IBAN imputs
+[ ] Add favicon
 [ ] Add copy option as suffix input - I think can be util in read-only fields like IBAN
 
 [ ] For each screen or challenge explain briefly words what was my approach do the exercice

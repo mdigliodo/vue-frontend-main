@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.6] - 23/07/2025
 - Enhance user profile bank account details
 - Enhance currency and IBAN imputs
+- Change favicon
 
 ## [1.0.5] - 22/07/2025
 - Adding modal component
